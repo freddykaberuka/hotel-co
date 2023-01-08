@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -231,6 +232,9 @@ const hotelDetail = ({ hotel }) => {
         </div>
       </div>
       <hr />
+      <div className="bg-gray-100">
+        <Footer />
+      </div>
     </>
   );
 };
