@@ -3,6 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import SkeletonCard from "../components/SkeletonCard";
+import HotelCard from "../components/HotelCard";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -31,39 +32,14 @@ export default function Home({ hotels }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className="max-w-7xl mx-auto px-8 sm:px-16">
+      <main className="max-w-full mx-auto px-8 sm:px-16">
         <h1 className="text-3xl font-bold underline"> Home Page</h1>
         <div className="flex flex-wrap gap-6">
           {loading ? (
             <SkeletonCard />
           ) : (
             hotels.map((hotel) => (
-              <div className="grid max-w-sm overflow-hidden" key={hotel.id}>
-                <Link href={"/" + hotel.id}>
-                  <div key={hotel.id}>
-                    <Image
-                      src={hotel.avatar}
-                      width="300"
-                      height="300"
-                      className="rounded-lg"
-                      alt=""
-                    />
-                  </div>
-                  <div className="pt-2">
-                    <h2 className="inline-block text-sm font-semibold text-black-700 mr-2">
-                      {hotel.name}, {hotel.Country}
-                    </h2>
-                    <p className="text-sm text-gray-700 mr-2">
-                      {hotel.size} square meters
-                    </p>
-                    <span className="text-sm text-gray-700 mr-2">May1 - 6</span>
-                    <p className="text-sm text-black-700 mr-2">
-                      ${hotel.amount}{" "}
-                      <span className="text-gray-700">night</span>
-                    </p>
-                  </div>
-                </Link>
-              </div>
+              <HotelCard hotel={hotel}/>
             ))
           )}
         </div>
