@@ -34,7 +34,7 @@ const hotelDetail = ({ hotel }) => {
       <Header />
       <hr />
       <div className="max-w-7xl mx-auto px-8 pt-8 sm:px-16 pb-4">
-        <div className="mb-4 pb-4">
+        <div className="mb-4 pb-4 w-32">
           <h1 className="text-2xl font-bold">{hotel.houseName}</h1>
           <span className="text-sm font-semibold underline">
             {hotel.name}, {hotel.Country}
@@ -78,14 +78,15 @@ const hotelDetail = ({ hotel }) => {
         </div>
         <div className="main-content flex pt-6 mt-6">
           <div>
-            <div className="">
+            <div className="pb-4">
               <h2 className="font-semibold text-2xl">{hotel.houseName}</h2>
               <span className="text-sm text-gray-700 mr-2">
                 {hotel.nGuest}guest • {hotel.bedroom}bedroom • {hotel.beds} beds
                 • {hotel.bath}bath
               </span>
             </div>
-            <div className="experience grid mt-3 pt-4">
+            <hr />
+            <div className="experience grid mt-3 pt-4 pb-4">
               <h3 className="font-semibold text-sm">Experienced host</h3>
               <span className="text-sm text-gray-700">
                 Marina has 180 reviews for other places
@@ -100,7 +101,8 @@ const hotelDetail = ({ hotel }) => {
                 Free cancellation for 48 hours.
               </h3>
             </div>
-            <div className="aircover mt-4">
+            <hr />
+            <div className="aircover mt-4 pb-4">
               <h3 className="font-semibold text-2xl">aircover</h3>
               <p className="mt-3 text-sm">
                 Every booking includes free protection from Host cancellations,
@@ -110,8 +112,8 @@ const hotelDetail = ({ hotel }) => {
                 <a>Learn more</a>
               </button>
             </div>
-
-            <div className="description mt-3 text-sm">
+            <hr />
+            <div className="description mt-3 text-sm pb-4">
               <p>
                 The Porer lighthouse was built in 1833 on the islet of the same
                 name, 2.5 km in front of the southern cape of Istria and the
@@ -124,6 +126,7 @@ const hotelDetail = ({ hotel }) => {
                 <a>show more</a>
               </button>
             </div>
+            <hr />
             <div className="offer mt-4">
               <h3 className="font-semibold text-2xl">What this place offers</h3>
               <div className="offer-list flex mt-3 text-sm">
