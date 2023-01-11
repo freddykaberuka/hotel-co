@@ -1,6 +1,8 @@
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import DetailSkeleton from "../components/detailSkeleton";
 
 export const getStaticPaths = async () => {
   const res = await fetch(
@@ -28,11 +30,22 @@ export const getStaticProps = async (context) => {
     props: { hotel: data },
   };
 };
+
 const hotelDetail = ({ hotel }) => {
+  const [loading, setLoading] = useState(1);
+  useEffect(() => {
+    if (hotel) {
+      setTimeout(() => {
+        setLoading(0);
+      });
+    }
+  }, [hotel]);
+
   return (
     <>
       <Header />
       <hr />
+      {loading ? <DetailSkeleton/> :(
       <div className="max-w-7xl mx-auto px-8 pt-8 sm:px-16 pb-4">
         <div className="mb-4 pb-4 w-32">
           <h1 className="text-2xl font-bold">{hotel.houseName}</h1>
@@ -234,6 +247,7 @@ const hotelDetail = ({ hotel }) => {
           </div>
         </div>
       </div>
+      )}
       <hr />
       <div className="bg-gray-100">
         <Footer />
