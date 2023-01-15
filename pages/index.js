@@ -5,6 +5,7 @@ import Link from "next/link";
 import SkeletonCard from "../components/SkeletonCard";
 import HotelCard from "../components/HotelCard";
 import Header2 from "../components/Header2";
+import TopHeader from "../components/topHeader";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -34,6 +35,7 @@ export default function Home({ hotels }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header2 />
+      <TopHeader/>
       <hr />
       <main className="max-w-full mx-auto px-8 py-8 sm:px-16">
         <div className="flex flex-wrap gap-6">
