@@ -17,11 +17,12 @@ export const getStaticProps = async () => {
 };
 
 export default function Home({ hotels }) {
-  const [loading, setLoading] = useState(1);
+  const [loading, setLoading] = useState(true);
+  
   useEffect(() => {
     if (hotels) {
       setTimeout(() => {
-        setLoading(0);
+        setLoading(false);
       });
     }
   }, [hotels]);
@@ -39,7 +40,9 @@ export default function Home({ hotels }) {
           {loading ? (
             <SkeletonCard />
           ) : (
-            hotels.map((hotel) => <HotelCard hotel={hotel} />)
+            hotels.map((hotel,index) => 
+              <HotelCard hotel={hotel} />
+            )
           )}
         </div>
       </main>
