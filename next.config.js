@@ -4,7 +4,8 @@ const nextConfig = {
   images: {
     domains: [
       "loremflickr.com",
-      "cloudflare-ipfs.com"
+      "cloudflare-ipfs.com",
+      "a0.muscache.com"
     ]
   }
 }

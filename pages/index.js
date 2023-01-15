@@ -35,8 +35,8 @@ export default function Home({ hotels }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Header2 />
-      <TopHeader/>
       <hr />
+      <TopHeader/>
       <main className="max-w-full mx-auto px-8 py-8 sm:px-16">
         <div className="flex flex-wrap gap-6">
           {loading ? (
