@@ -1,17 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
+
 export const HotelCard = ({ hotel }) => {
   return (
-    <div className="grid max-w-sm overflow-hidden" key={hotel.id}>
-      <div className="text-right w-full pr-8">
-        <button className="absolute">
+    <div className="max-w-sm overflow-hidden border border-gray-300 rounded-lg shadow-lg">
+      <div className="relative">
+        <button className="absolute right-0 p-1 -mt-1 -mr-1 rounded-full shadow-lg">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="gray"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-6 h-6 text-white"
+            className="w-6 h-6 text-gray-600"
           >
             <path
               strokeLinecap="round"
@@ -20,30 +21,35 @@ export const HotelCard = ({ hotel }) => {
             />
           </svg>
         </button>
+        <Link href={"/" + hotel.id}>
+          <div>
+            <Image
+              src={hotel.avatar}
+              className="rounded-t-lg"
+              alt=""
+              layout="responsive"
+              width={300}
+              height={300}
+            />
+          </div>
+        </Link>
       </div>
-      <Link href={"/" + hotel.id}>
-        <div key={hotel.id}>
-          <Image
-            src={hotel.avatar}
-            width="300"
-            height="300"
-            className="rounded-lg"
-            alt=""
-          />
-        </div>
-        <div className="pt-2">
-          <h2 className="inline-block text-sm font-semibold text-black-700 mr-2 break-words">
-            {hotel.name}, {hotel.Country}
-          </h2>
-          <p className="text-sm text-gray-700 mr-2">
-            {hotel.size} square meters
-          </p>
-          <span className="text-sm text-gray-700 mr-2">May1 - 6</span>
-          <p className="text-sm text-black-700 mr-2">
-            ${hotel.amount} <span className="text-gray-700">night</span>
-          </p>
-        </div>
-      </Link>
+      <div className="p-4">
+        <Link href={"/" + hotel.id}>
+          <div>
+            <h2 className="text-sm md:text-base font-semibold text-black-700 mb-1 break-words">
+              {hotel.name}, {hotel.country}
+            </h2>
+            <p className="text-sm text-gray-700 mb-1">
+              {hotel.size} square meters
+            </p>
+            <span className="text-sm text-gray-700 mb-1">May 1 - 6</span>
+            <p className="text-sm text-black-700">
+              ${hotel.amount} <span className="text-gray-700">per night</span>
+            </p>
+          </div>
+        </Link>
+      </div>
     </div>
   );
 };

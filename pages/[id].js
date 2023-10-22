@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
-import Header from "../components/Header";
+import Header2 from "../components/Header2";
 import Footer from "../components/Footer";
 import DetailSkeleton from "../components/detailSkeleton";
 
@@ -43,7 +43,7 @@ const hotelDetail = ({ hotel }) => {
 
   return (
     <>
-      <Header />
+      <Header2 />
       <hr />
       {loading ? <DetailSkeleton/> :(
       <div className="max-w-7xl mx-auto px-8 pt-8 sm:px-16 pb-4">
@@ -89,7 +89,7 @@ const hotelDetail = ({ hotel }) => {
             </div>
           </div>
         </div>
-        <div className="main-content flex pt-6 mt-6">
+        <div className="main-content flex flex-col lg:flex-row pt-6 mt-6">
           <div>
             <div className="pb-4">
               <h2 className="font-semibold text-2xl">{hotel.houseName}</h2>
