@@ -6,6 +6,7 @@ import SkeletonCard from "../components/SkeletonCard";
 import HotelCard from "../components/HotelCard";
 import Header2 from "../components/Header2";
 import TopHeader from "../components/topHeader";
+import { fetchHotels } from "./api/api";
 
 export const getStaticProps = async () => {
   const res = await fetch(
@@ -19,14 +20,43 @@ export const getStaticProps = async () => {
 
 export default function Home({ hotels }) {
   const [loading, setLoading] = useState(true);
-  
+  const [hotelData, setHotelData] = useState([]);
+  const [page, setPage] = useState(1);
+  const [pageSize] = useState(6);
+
+  const handleScroll = () => {
+    if (
+      window.innerHeight + window.scrollY >= document.body.offsetHeight - 300
+    ) {
+      setLoading(true);
+    }
+  };
+
+  useEffect(() => {
+    const loadMoreHotels = async () => {
+      const newData = await fetchHotels(page, pageSize);
+      setHotelData((prevHotels) => [...prevHotels, ...newData]);
+      setLoading(false);
+      setPage(page + 1);
+    };
+
+    if (loading) {
+      loadMoreHotels();
+    }
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [loading, page, pageSize]);
+
   useEffect(() => {
     if (hotels) {
-      setTimeout(() => {
-        setLoading(false);
-      });
+      setLoading(false);
     }
   }, [hotels]);
+
   return (
     <>
       <Head>
@@ -36,15 +66,15 @@ export default function Home({ hotels }) {
       </Head>
       <Header2 />
       <hr />
-      <TopHeader/>
+      <TopHeader />
       <main className="max-w-full mx-auto px-8 py-8 sm:px-16">
         <div className="flex flex-wrap gap-6">
           {loading ? (
             <SkeletonCard />
           ) : (
-            hotels.map((hotel,index) => 
-              <HotelCard hotel={hotel} />
-            )
+            hotelData.map((hotel, index) => (
+              <HotelCard hotel={hotel} key={hotel.id} />
+            ))
           )}
         </div>
       </main>
