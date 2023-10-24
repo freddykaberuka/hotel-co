@@ -1,36 +1,115 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📖 [Hotel-Co] <a name="about-project"></a>
 
-## Getting Started
+> It is a platform that offers travelers the opportunity to experience hospitality from home across the global
 
-First, run the development server:
+## 🛠 Built With <a name="built-with"></a>
 
-```bash
-npm run dev
-# or
-yarn dev
+### Tech Stack <a name="tech-stack"></a>
+
+> Describe the tech stack and include only the relevant sections that apply to your project.
+
+<details>
+  <summary>FrontEnd</summary>
+  <ul>
+    <li><a href="https://nextjs.org/">Next.js</a></li>
+    <li><a href="https://tailwindcss.com/">Tailwind css</a></li>
+    <li><a href="https://www.npmjs.com/package/react-query">React-query</a></li>
+  </ul>
+</details>
+<details>
+  <summary>Backend</summary>
+  <ul>
+    <li><a href="https://mockapi.io">Mockapi</a></li>
+  </ul>
+</details>
+
+<!-- Features -->
+
+### Key Features <a name="key-features"></a>
+
+> The added feature is
+
+- **[Listing an Available Hotels]**
+- **[View a Single Hotel Details]**
+- **[Infinity Scroll pagination]**
+
+
+<!-- GETTING STARTED -->
+
+## 💻 Getting Started <a name="getting-started"></a>
+
+> It is a platform that offers travelers the opportunity to experience hospitality from home across the global
+
+To get a local copy up and running, follow these steps.
+
+### Prerequisites
+
+In order to run this project you need:
+
+
+### Setup
+
+Clone this repository to your desired folder:
+
+
+```sh
+  cd my-folder
+  git clone [https://github.com/freddykaberuka/mocro-library.git](https://github.com/freddykaberuka/hotel-co.git)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Install
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Install this project with:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+```sh
+  cd hotel-co
+  npm install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+### Usage
 
-To learn more about Next.js, take a look at the following resources:
+To run the project, execute the following command:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```sh
+  npm run dev
+```
 
-## Deploy on Vercel
+### Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+You can deploy this project using:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```sh
+  npm run build
+```
+
+## 👥 Authors <a name="authors"></a>
+
+👤 **Author**
+
+- GitHub: [@githubhandle](https://github.com/freddykaberuka)
+- Twitter: [@twitterhandle](https://twitter.com/trojanx07)
+- LinkedIn: [LinkedIn](https://linkedin.com/in/kaberuka-freddy-853b08153/)
+
+
+## 🔭 Future Features <a name="future-features"></a>
+
+> It is a platform that offers travelers the opportunity to experience hospitality from home across the global
+
+- [ ] **[Listing an Available Hotels]**
+- [ ] **[View a Single Hotel Details]**
+- [ ] **[Infinity Scroll pagination]**
+
+## 🤝 Contributing <a name="contributing"></a>
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+
+## ⭐️ Show your support <a name="support"></a>
+
+> If you like this project feel free to contribute.
